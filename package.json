@@ -1,0 +1,16 @@
+{
+  "name": "dbms-final-express",
+  "version": "1.0.0",
+  "description": "connection to mysql for dbms-final",
+  "main": "index.js",
+  "scripts": {
+    "serve": "nodemon index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.22"
+  }
+}
