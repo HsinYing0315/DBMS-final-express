@@ -1,17 +1,19 @@
 const { connection } = require("../database/db");
 
 const getItems = async () => {
-    const rows = await new Promise((resolve, reject) => {
-        connection.query(`SELECT * FROM item`, (error, results) => {
-          if (error) {
-            reject(error);
-          } else {
-            resolve(results);
-          }
-        });
+  console.log("fetch all items")
+  
+  const rows = await new Promise((resolve, reject) => {
+    connection.query(`SELECT * FROM item`, (error, results) => {
+      if (error) {
+        reject(error);
+      } else {
+        resolve(results);
+      }
     });
+  });
 
-    return rows
+  return rows
 }
 
 module.exports = { 

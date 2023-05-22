@@ -1,9 +1,8 @@
 const express = require("express")
-const {
-	getItems,
-} = require("./model/item.model")
 const { getUser, registerUser, editPhone, editRating } = require("./model/user.model")
 const app = express()
+
+const itemRouter = require("./routes/item.route.ts")
 
 
 const port = 3307
@@ -16,26 +15,28 @@ app.get("/", (req, res) => {
 	})
 })
 
-app.get("/item", async (req, res) => {
-	console.log("get all items")
+app.use("/api/item", itemRouter)
 
-	try {
-		const item = await getItems()
-		if (item.length === 0) {
-			res.status(404).send({
-				msg: "No item found"
-			})
-			return
-		}
-		res.status(200).send({
-			item: item
-		})
-	} catch (error) {
-		res.status(500).send({
-			msg: "Internal Server Error"
-		})
-	}
-})
+// app.get("/item", async (req, res) => {
+// 	console.log("get all items")
+
+// 	try {
+// 		const item = await getItems()
+// 		if (item.length === 0) {
+// 			res.status(404).send({
+// 				msg: "No item found"
+// 			})
+// 			return
+// 		}
+// 		res.status(200).send({
+// 			item: item
+// 		})
+// 	} catch (error) {
+// 		res.status(500).send({
+// 			msg: "Internal Server Error"
+// 		})
+// 	}
+// })
 
 app.get("/user", async (req, res) => {
 	console.log("get user")
