@@ -1,4 +1,5 @@
 const express = require("express")
+const cors = require("cors")
 const app = express()
 
 const itemRouter = require("./routes/item.route.ts")
@@ -6,6 +7,7 @@ const userRouter = require("./routes/user.route.ts")
 
 
 const port = 3307
+app.use(cors())
 app.use(express.json())
 
 
