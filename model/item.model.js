@@ -5,7 +5,6 @@ const addItem = async (data) => {
   const keys = Object.keys(data)
   const values = Object.values(data)
 
-  console.log(keys)
   let keyString = keys[0]
   let valueString = "'" + values[0] + "'"
   for(let i = 1; i < keys.length; i ++) {
@@ -15,7 +14,7 @@ const addItem = async (data) => {
 
   const now = new Date()
   const YY = now.getFullYear()
-  const MM = now.getMonth() < 10 ? "0" + now.getMonth() : now.getMonth()
+  const MM = now.getMonth() < 10 ? "0" + (now.getMonth()+1) : (now.getMonth()+1)
   const DD = now.getDate() < 10 ? "0" + now.getDate() : now.getDate()
   const hh = (now.getHours() < 10 ? "0" + now.getHours() : now.getHours()) + ":";
   const mm = (now.getMinutes() < 10 ? "0" + now.getMinutes() : now.getMinutes()) + ":";
