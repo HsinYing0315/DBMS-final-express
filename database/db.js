@@ -1,7 +1,7 @@
 const mysql = require("mysql");
 
 const mysqlConfig = {
-    host: "localhost",
+    host: "35.229.167.167",
     user: "root",
     password: "Wu920315",
     database: "final"
